@@ -1,8 +1,16 @@
-## предварительная установка ##
+# Photo generator #
+## Dockerhub ##
+```bash
+docker run -it --gpus all -v=./output:/output --rm tyurina0410/dreamfusion
+```
+You'll be asked for a phrase upon which the image will be generated.
+Generated image will appear in the __./output__ folder with name __df.png__.
+
+## Local machine ##
 
 ```bash
-git clone
-cd
+git clone https://github.com/Gerasim0410/DLS.git DLS
+cd DLS
 
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && \
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - && \
@@ -12,8 +20,7 @@ sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 ```
 
-## запуск контейнера ##
 ```bash
-docker build --tag=<> .
+docker build --tag=tyurina0410/dreamfusion .
 docker run -it --gpus all -v=./output:/output --rm tyurina0410/dreamfusion
 ```
